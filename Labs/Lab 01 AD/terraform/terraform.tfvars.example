@@ -1,0 +1,15 @@
+# Copy this file to terraform.tfvars and fill in real values.
+# terraform.tfvars is gitignored — never commit real passwords.
+
+james          = "james"
+location       = "East US"
+admin_password = "YourAdminPassword123!"
+dsrm_password  = "YourDSRMPassword123!"
+domain_name    = "corp.james.com"
+
+# NOTE: the key must be domain_netbios_name to match variables.tf.
+# The actual lab run used the key "domain_netbios" (missing "_name"),
+# which Terraform silently ignored as an undeclared variable — the
+# deployment still worked because domain_netbios_name's default value
+# ("CORP") happened to match. See lessons-learned.md.
+domain_netbios_name = "CORP"
